@@ -51,6 +51,7 @@ add_smalltext|`9Command : `0/door [`9 id `0] `0( `3Join a door in world using id
 add_smalltext|`9Command : `0/player [`9 player name `0] `0( `3Teleport to a player in world `0)|left|
 add_smalltext|`9Command : `0/pickup [`9 id `0] `0( `3Only pickup 1 item `0)|left|
 add_smalltext|`9Command : `0/autocollect or /ac `0( `3Enable / Disable auto-collect `0)|left|
+add_smalltext|`9Command : `0/compress or /cp `0( `3Auto compress wl `0)|left|
 add_smalltext|`9Command : `0/blink `0( `3Enable / Disable blink skin color `0)|left|
 add_smalltext|`9Command : `0/dropall `0( `3Dropp all inv items `0)|left|
 add_smalltext|`1Note : `0[`4 /dropapHave chance of Shadowban `0]|left|
@@ -192,6 +193,7 @@ add_smalltext|`9Command : `0/dt2 `0( `3Drop tax to winner 2 `0)|left|
 add_smalltext|`9Command : `0/dt3 `0( `3Drop tax to winner 3 `0)|left|
 add_smalltext|`9Command : `0/dt4 `0( `3Drop tax to winner 4 `0)|left|
 add_smalltext|`9Command : `0/collect or /tp `0( `3Collect locks from players `0)|left|
+add_smalltext|`9Command : `0/compress or /cp `0( `3Auto compress wl `0)|left|
 add_smalltext|`9Command : `0/drop or /d `0[`9 amount `0] `0( /drop 120 ( 1 dl & 20 wls) `0) |left|
 add_smalltext|`9Command : `0/wl [`9 amount `0]|left|
 add_smalltext|`9Command : `0/dl [`9 amount `0]|left|
@@ -816,6 +818,17 @@ AddCallback("hide_dialogx","OnPacket", hide_dialogx)
 function cdrop_drop(type, packet)
     if packet:find("action|input\n|text|/drop") and not packet:find("action|input\n|text|/dropall")then
         amount = packet:gsub("action|input\n|text|/drop", "")
+                RunThread(function()
+                    cdrop_delayed()
+            end)
+                    return true
+            end
+        end
+AddCallback("cdrop_drop", "OnPacket", cdrop_drop)
+
+function cdrop_drop(type, packet)
+    if packet:find("action|input\n|text|/d") and not packet:find("action|input\n|text|/dropall")then
+        amount = packet:gsub("action|input\n|text|/d", "")
                 RunThread(function()
                     cdrop_delayed()
             end)
