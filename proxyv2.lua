@@ -133,7 +133,7 @@ add_smalltext|`9Command : `0/voff `0( `3turn off vend mode `0)|left|
 add_spacer|small|
 add_label_with_icon|small|`3Spam Commands``|left|6272|
 add_spacer|small|
-add_smalltext|`9Command : `0/spamtext or /st [`9 text `0] `0( `3Set a spam text `0)|left|
+add_smalltext|`9Command : `0/spamtext or /spt [`9 text `0] `0( `3Set a spam text `0)|left|
 add_smalltext|`9Command : `0/spamdelay or /sd [`9 delay `0] `0( `3Set delay for spaming in seconds `0)|left|
 add_smalltext|`9Command : `0// `0( `3Enable / Disable spam `0)|left|
 add_spacer|small|
@@ -449,7 +449,7 @@ varlist[0] = "OnDialogRequest"
 varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Spam Commands``|left|6272|
 add_spacer|small|
-add_smalltext|`9Command : `0/spamtext or /st [`9 text `0] `0( `3set a text to spam `0)|left|
+add_smalltext|`9Command : `0/spamtext or /spt [`9 text `0] `0( `3set a text to spam `0)|left|
 add_smalltext|`9Command : `0/spamdelay or /sd [`9 delay `0] `0( `3set delay in seconds `0)|left|
 add_smalltext|`9Command : `0// `0( `3start / stop spam `0)|left|
 add_quick_exit|
@@ -6533,8 +6533,8 @@ function set_spam_text(type, packet)
 AddCallback("set_spam_text","OnPacket", set_spam_text)
 
 function set_spam_text2(type, packet)
-    if packet:find("action|input\n|text|/spamt ") then
-        set_spam_text = packet:gsub("action|input\n|text|/spamt ", "")
+    if packet:find("action|input\n|text|/spt ") then
+        set_spam_text = packet:gsub("action|input\n|text|/spt ", "")
                 OnConsoleMessage("`0[ `3Yoshiro `0] `9spam text set to :`3 "..set_spam_text)
           return true
         end
