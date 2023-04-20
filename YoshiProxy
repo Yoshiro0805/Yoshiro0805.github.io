@@ -1,5 +1,4 @@
 function proxy_commands()
-varlist = {}
 varlist[0] = "OnDialogRequest"
 varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Proxy Command List``|left|1790|
