@@ -1,6 +1,4 @@
 function proxy_commands()
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Proxy Command List``|left|1790|
 add_spacer|small|
 add_textbox|`9This Proxy Made By : `!YoshiGT|left|
@@ -194,15 +192,9 @@ add_label_with_icon|small|`3Check my social media !``|left|8224|
 add_quick_exit|
 end_dialog|proxy_main_cmd|`0Cancel|`0Okay|
 ]]
-varlist.netid = -1
-    
-SendVarlist(varlist)
 end
 
 function proxy_shortcut1()
-    varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Main Commands``|left|5956|
 add_spacer|small|
 add_smalltext|`9Command : `0/info `0( `3show the status for each command `0)|left|
@@ -244,14 +236,9 @@ add_smalltext|`1Note : `0[`4 Have chance of Shadowban `0]|left|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcut2()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3World Commands``|left|3802|
 add_spacer|small|
 add_smalltext|`9Command : `!/World|left|
@@ -264,14 +251,9 @@ add_smalltext|`9Command : `0/tradeall `0( `3trade all players in world `0)|left|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcut3()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Wrench Commands``|left|32|
 add_spacer|small|
 add_smalltext|`9Command : `!/wm|left|
@@ -284,14 +266,9 @@ add_smalltext|`9Command : `0/woff `0( `3turn wrench mode off `0)|left|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcut4()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Growscan Commands``|left|6016|
 add_spacer|small|
 add_smalltext|`9Command : `!/gs or /growscan|left|
@@ -302,14 +279,9 @@ add_smalltext|`9Command : `0/growscan 2 or /gs 2 `0( `3scan dropped items `0)|le
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcut5()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Farming Commands``|left|6950|
 add_spacer|small|
 add_smalltext|`9Command : `!/ut|left|
@@ -329,14 +301,9 @@ add_spacer|small|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcut6()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Join Commands``|left|6|
 add_spacer|small|
 add_smalltext|`9Command : `!/join|left|
@@ -348,14 +315,9 @@ add_smalltext|`9Command : `0/j off `0( `3turn off join mode `0)|left|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcut7()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Donation Box Commands``|left|1452|
 add_spacer|small|
 add_smalltext|`9Command : `!/donation|left|
@@ -367,14 +329,9 @@ add_smalltext|`9Command : `0/donation off or /doff `0( `3turn off donation box m
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcut8()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Vend Commands``|left|2978|
 add_spacer|small|
 add_smalltext|`9Command : `0/ve `0( `3fast empty vend `0)|left|
@@ -384,14 +341,9 @@ add_smalltext|`9Command : `0/voff `0( `3turn off vend mode `0)|left|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcut9()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Spam Commands``|left|6272|
 add_spacer|small|
 add_smalltext|`9Command : `0/spamtext or /spt [`9 text `0] `0( `3set a text to spam `0)|left|
@@ -400,14 +352,9 @@ add_smalltext|`9Command : `0// `0( `3start / stop spam `0)|left|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcu01()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Harvest Commands``|left|1830|
 add_spacer|small|
 add_smalltext|`9Command : `0/harvestid [`9 id `0] `0( `3set a seed id `0)|left|
@@ -416,14 +363,9 @@ add_smalltext|`9Command : `0/hv `0( `3start / stop harvest `0)|left|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcu11()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Safe Commands``|left|278|
 add_spacer|small|
 add_smalltext|`9Command : `0/safe 1 `0( `3collect & ban all & unacces & leave `0)|left|
@@ -433,14 +375,9 @@ add_smalltext|`9Command : `0/safe off `0( `3turns off safe commands `0)|left|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcu12()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Bypass Safe Vault Commands``|left|8878|
 add_spacer|small|
 add_smalltext|`9Command : `0/vault `0( `3set x and y for vault pos `0)|left|
@@ -448,14 +385,9 @@ add_smalltext|`9Command : `0/bypass `0( `3auto bypass vault `0)|left|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcu13()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Host Commands``|left|758|
 add_spacer|small|
 add_smalltext|`9Command : `0/spin check `0( `3check is spin real or fake `0)|left|
@@ -499,14 +431,9 @@ add_smalltext|`9Command : `0/bgl [`9 amount `0]|left|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcu14()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Titles Commands``|left|6276|
 add_spacer|small|
 add_smalltext|`9Command : `!/titles|left|
@@ -521,14 +448,9 @@ add_smalltext|`9Command : `0/title reset `0( `3reset titles to normal `0)|left|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcu15()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Visual Clothes``|left|1784|
 add_spacer|small|
 add_smalltext|`9Command : `0/saveclothe or /sc `0( `3wear set when joining world `0)|left|
@@ -545,14 +467,9 @@ add_smalltext|`9Command : `0/clothe x /clothes `0( `3wear visual set `0)|left|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function proxy_shortcu16()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`3Visual Commands``|left|9228|
 add_spacer|small|
 add_smalltext|`9Command : `0/flag [`9 id `0]|left|
@@ -565,14 +482,9 @@ add_smalltext|`9Command : `0/inv `0( `3make everyone invisible `0)|left|
 add_quick_exit|
 end_dialog|proxy_shortcut|`0Cancel|`0Back|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function shortcuts_proxy22()
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`!Proxy Commands Shortcut  |left|10754|
 add_spacer|small
 add_button|proxy_shortcut1|`9Main Commands|noflags|0|0|
@@ -594,15 +506,10 @@ add_button|proxy_shortcu16|`!Visual Commands|noflags|0|0|
 add_quick_exit|
 end_dialog|lmfao_commands_main_proxy|`0Cancel|`0Okay|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 end
 
 function shortcuts_proxy(type, packet)
     if packet == ("action|input\n|text|/commands") then
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`!Proxy Commands Shortcut  |left|10754|
 add_spacer|small
 add_button|proxy_shortcut1|`9Main Commands|noflags|0|0|
@@ -624,8 +531,6 @@ add_button|proxy_shortcu16|`!Visual Commands|noflags|0|0|
 add_quick_exit|
 end_dialog|lmfao_commands_main_proxy|`0Cancel|`0Okay|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 return true
 end
 end
@@ -633,9 +538,6 @@ AddCallback("shortcuts_proxy","OnPacket", shortcuts_proxy)
 
 function shortcuts_proxy(type, packet)
     if packet == ("action|input\n|text|/cmd") then
-varlist = {}
-varlist[0] = "OnDialogRequest"
-varlist[1] = [[set_default_color|`o
 add_label_with_icon|big|`!Proxy Commands Shortcut  |left|10754|
 add_spacer|small
 add_button|proxy_shortcut1|`9Main Commands|noflags|0|0|
@@ -657,8 +559,6 @@ add_button|proxy_shortcu16|`!Visual Commands|noflags|0|0|
 add_quick_exit|
 end_dialog|lmfao_commands_main_proxy|`0Cancel|`0Okay|
 ]]
-varlist.netid = -1
-SendVarlist(varlist)
 return true
 end
 end
@@ -2510,9 +2410,9 @@ function shortcutsxd1(type, packet)
                     casino_help_when_join_status = "`4Disabled"
             end
             
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`9Command Information``|left|1790|
     add_spacer|small|
     add_smalltext|`9auto-surg : ]]..autosurg_status..[[|left|
@@ -2538,8 +2438,7 @@ function shortcutsxd1(type, packet)
     add_quick_exit|
     end_dialog|info_main_cmd|`0Cancel|`0Okay|
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)        
+            
         return true
         end
     end
@@ -2580,9 +2479,9 @@ function shortcutsxd1(type, packet)
                 type_wm = "`2Enabled"
             end
     if type_wm == "`2Enabled" and mode_wm == "pull" then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Wrench Mode|left|32|
     add_spacer|small
     add_textbox|`9Currently Wrench Mode is `2Enabled `9And is Set To : `3]]..mode_wm..[[|left|
@@ -2597,12 +2496,11 @@ function shortcutsxd1(type, packet)
     end_dialog|wrench_modesxd|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     elseif type_wm == "`2Enabled" and mode_wm == "kick" then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Wrench Mode|left|32|
     add_spacer|small
     add_textbox|`9Currently Wrench Mode is `2Enabled `9And is Set To : `3]]..mode_wm..[[|left|
@@ -2617,12 +2515,11 @@ function shortcutsxd1(type, packet)
     end_dialog|wrench_modesxd|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     elseif type_wm == "`2Enabled" and mode_wm == "ban" then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Wrench Mode|left|32|
     add_spacer|small
     add_textbox|`9Currently Wrench Mode is `2Enabled `9And is Set To : `3]]..mode_wm..[[|left|
@@ -2637,12 +2534,11 @@ function shortcutsxd1(type, packet)
     end_dialog|wrench_modesxd|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     else
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Wrench Mode|left|32|
     add_spacer|small
     add_textbox|`9Currently Wrench Mode is `4Disabled|left|
@@ -2657,8 +2553,7 @@ function shortcutsxd1(type, packet)
     end_dialog|wrench_modesxd|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     end
     return true
     end
@@ -2718,9 +2613,9 @@ function shortcutsxd1(type, packet)
     
     function world_commands(type, packet)
         if packet == ("action|input\n|text|/world") then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!World Commands|left|3802|
     add_spacer|small
     add_button|world_pull|`9Pull all players|noflags|0|0|
@@ -2732,8 +2627,7 @@ function shortcutsxd1(type, packet)
     end_dialog|World_commands|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     return true
     end
     end
@@ -3544,9 +3438,9 @@ function shortcutsxd1(type, packet)
                 ut_mode_69 = "`4Disabled"
             end
     if ut_of_or_no and ut_adder_mode then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Unstable Tesseract Commands|left|6948|
     add_spacer|small
     add_textbox|`9Currently UT Mode is `2Enabled `9And is Set To : `3]]..ut_mode_69..[[|left|
@@ -3559,12 +3453,11 @@ function shortcutsxd1(type, packet)
     end_dialog|ut_mode_xd|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     elseif ut_of_or_no and ut_emptier_mode then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Unstable Tesseract Commands|left|6948|
     add_spacer|small
     add_textbox|`9Currently UT Mode is `2Enabled `9And is Set To : `3]]..ut_mode_69..[[|left|
@@ -3577,12 +3470,11 @@ function shortcutsxd1(type, packet)
     end_dialog|ut_mode_xd|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     else
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Unstable Tesseract Commands|left|6948|
     add_spacer|small
     add_textbox|`9Currently UT Mode is `4Disabled|left|
@@ -3595,8 +3487,7 @@ function shortcutsxd1(type, packet)
     end_dialog|ut_mode_xd|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     end
     return true
     end
@@ -3757,9 +3648,9 @@ function shortcutsxd1(type, packet)
     function Gaia_commands(type, packet)
         if packet == ("action|input\n|text|/gaia") then
     if gaia_of_or_no and gaia_adder_mode then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Gaia's Beacon Commands|left|6946|
     add_spacer|small
     add_textbox|`9Currently GAIA Mode is `2Enabled `9And is Set To : `3Fast Add|left|
@@ -3772,12 +3663,11 @@ function shortcutsxd1(type, packet)
     end_dialog|gaia_mode_xd|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     elseif gaia_of_or_no and gaia_emptier_mode then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Gaia's Beacon Commands|left|6946|
     add_spacer|small
     add_textbox|`9Currently GAIA Mode is `2Enabled `9And is Set To : `3Fast Empty|left|
@@ -3790,12 +3680,11 @@ function shortcutsxd1(type, packet)
     end_dialog|gaia_mode_xd|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     else
-        varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+    
+
+
     add_label_with_icon|big|`!Gaia's Beacon Commands|left|6946|
     add_spacer|small
     add_textbox|`9Currently GAIA Mode is `4Disabled|left|
@@ -3808,8 +3697,7 @@ function shortcutsxd1(type, packet)
     end_dialog|gaia_mode_xd|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     end
     return true
     end
@@ -3991,9 +3879,9 @@ function shortcutsxd1(type, packet)
                 type_donation_box = "`2Enabled"
             end
     if type_donation_box == "`4Disabled" and mode_donation_boxes1 == "Donation_Off" then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Donation Box Commands|left|1452|
     add_spacer|small
     add_textbox|`9Currently Donation Mode is `4Disabled|left|
@@ -4006,12 +3894,11 @@ function shortcutsxd1(type, packet)
     end_dialog|donate_world_ui|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     elseif type_donation_box == "`2Enabled" and mode_donation_boxes == "Donation_Empty" then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Donation Box Commands|left|1452|
     add_spacer|small
     add_textbox|`9Currently Donation Mode is `2Enabled `9And is Set To : `3Fast Empty|left|
@@ -4024,12 +3911,11 @@ function shortcutsxd1(type, packet)
     end_dialog|donate_world_ui|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     elseif type_donation_box == "`2Enabled" and mode_donation_boxes == "Donation_Add" then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Donation Box Commands|left|1452|
     add_spacer|small
     add_textbox|`9Currently Donation Mode is `2Enabled `9And is Set To : `3Fast Add|left|
@@ -4042,8 +3928,7 @@ function shortcutsxd1(type, packet)
     end_dialog|donate_world_ui|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     end
     return true
     end
@@ -4157,9 +4042,9 @@ function shortcutsxd1(type, packet)
     function join_commands(type, packet)
         if packet == ("action|input\n|text|/join") then
     if set_mod_join == "pull" then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Join Commands|left|6|
     add_spacer|small
     add_textbox|`9Currently Join Mode is `2Enabled `9And is Set To : `3]]..set_mod_join..[[|left|
@@ -4173,12 +4058,11 @@ function shortcutsxd1(type, packet)
     end_dialog|join_commands|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     elseif set_mod_join == "kick" then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Join Commands|left|6|
     add_spacer|small
     add_textbox|`9Currently Join Mode is `2Enabled `9And is Set To : `3]]..set_mod_join..[[|left|
@@ -4192,12 +4076,11 @@ function shortcutsxd1(type, packet)
     end_dialog|join_commands|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     elseif set_mod_join == "ban" then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Join Commands|left|6|
     add_spacer|small
     add_textbox|`9Currently Join Mode is `2Enabled `9And is Set To : `3]]..set_mod_join..[[|left|
@@ -4211,12 +4094,11 @@ function shortcutsxd1(type, packet)
     end_dialog|join_commands|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     elseif set_mod_join == "off" then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Join Commands|left|6|
     add_spacer|small|
     add_textbox|`9Currently Join Mode is `4Disabled|left|
@@ -4230,8 +4112,7 @@ function shortcutsxd1(type, packet)
     end_dialog|join_commands|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     end
     return true
     end
@@ -7817,9 +7698,9 @@ function shortcutsxd1(type, packet)
     
     function title_ui_commands(type, packet)
         if packet == ("action|input\n|text|/titles") then
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
-    varlist[1] = [[set_default_color|`o
+
+
+
     add_label_with_icon|big|`!Choose title|left|6276|
     add_spacer|small|
     add_button|g4g_title|`9G4G Title|noflags|0|0|
@@ -7833,8 +7714,7 @@ function shortcutsxd1(type, packet)
     end_dialog|World_commands|`0Cancel|`0Okay
     |
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
     return true
     end
     end
@@ -7977,8 +7857,8 @@ function shortcutsxd1(type, packet)
                     "\nadd_label_with_icon|small|`0"  ..GetIteminfo(idplaced).name.." `0: "..count.."``|left|" .. tostring(tile.id)
             end
                                  
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
+
+
     varlist[1] = [[
     set_default_color|`o
     add_label_with_icon|big|`0Placed Items``|left|6016
@@ -7986,8 +7866,7 @@ function shortcutsxd1(type, packet)
     add_quick_exit|
     end_dialog|grow_scan|`0Okay|`4Back|
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
             return true
     
             
@@ -8017,8 +7896,8 @@ function shortcutsxd1(type, packet)
                     "\nadd_label_with_icon|small|`0"  ..GetIteminfo(xx).name.." `0: "..count.."``|left|" .. tostring(object.id)
             end
             
-    varlist = {}
-    varlist[0] = "OnDialogRequest"
+
+
     varlist[1] = [[
     set_default_color|`o
     add_label_with_icon|big|`0Floating Items `0``|left|6016
@@ -8027,8 +7906,7 @@ function shortcutsxd1(type, packet)
     end_dialog|grow_scan|`0Okay
     |`4Back|
     ]]
-    varlist.netid = -1
-    SendVarlist(varlist)
+    
             return true
         end
     end
@@ -8091,11 +7969,11 @@ function shortcutsxd1(type, packet)
                     "\nadd_label_with_icon|small|`0"  ..GetIteminfo(idplaced).name.." `0: "..count.."``|left|" .. tostring(tile.id)
             end
             
-            varlist = {}
-            varlist[0] = "OnDialogRequest"
+        
+        
             varlist[1] = "set_default_color|`o\nadd_label_with_icon|big|`0Placed Items `0``|left|6016\n"..placedshit.."\nadd_quick_exit"
-            varlist.netid = -1
-            SendVarlist(varlist)
+            
+    
             return true
         end
     end
@@ -8129,11 +8007,11 @@ function shortcutsxd1(type, packet)
                     "\nadd_label_with_icon|small|`0"  ..GetIteminfo(xx).name.." `0: "..count.."``|left|" .. tostring(object.id)
             end
             
-            varlist = {}
-            varlist[0] = "OnDialogRequest"
+        
+        
             varlist[1] = "set_default_color|`o\nadd_label_with_icon|big|`0Floating items `0``|left|6016\n"..droppedshit.."\nadd_quick_exit"
-            varlist.netid = -1
-            SendVarlist(varlist)
+            
+    
             return true
         end
     end
@@ -8371,120 +8249,7 @@ function shortcutsxd1(type, packet)
     end
     
     AddCallback("check_spin","OnPacket", check_spin)
-    
-    function visual_spin_2(type, packet)
-        if packet:find("action|input\n|text|/visualspin ") then
-            spin_nmber = packet:gsub("action|input\n|text|/visualspin ", "")
-              spin_nmber = tonumber(spin_nmber)
-              OnConsoleMessage("`0[ `3Yoshiro `0] `9Visual spin set to `3"..spin_nmber)
-              if spin_nmber == 0 then
-                color_visual_spin = 2
-              elseif spin_nmber == 1 then
-                color_visual_spin = 4
-              elseif spin_nmber == 2 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 3 then
-                color_visual_spin = 4
-              elseif spin_nmber == 4 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 5 then
-                color_visual_spin = 4
-              elseif spin_nmber == 6 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 7 then
-                color_visual_spin = 4
-              elseif spin_nmber == 8 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 9 then
-                color_visual_spin = 4
-              elseif spin_nmber == 10 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 11 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 12 then
-                color_visual_spin = 4
-              elseif spin_nmber == 13 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 14 then
-                color_visual_spin = 4
-              elseif spin_nmber == 15 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 16 then
-                color_visual_spin = 4
-              elseif spin_nmber == 17 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 18 then
-                color_visual_spin = 4
-              elseif spin_nmber == 19 then
-                color_visual_spin = 4
-              elseif spin_nmber == 20 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 21 then
-                color_visual_spin = 4
-              elseif spin_nmber == 22 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 23 then
-                color_visual_spin = 4
-              elseif spin_nmber == 24 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 25 then
-                color_visual_spin = 4
-              elseif spin_nmber == 26 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 27 then
-                color_visual_spin = 4
-              elseif spin_nmber == 28 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 29 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 30 then
-                color_visual_spin = 4
-              elseif spin_nmber == 31 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 32 then
-                color_visual_spin = 4
-              elseif spin_nmber == 33 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 34 then
-                color_visual_spin = 4
-              elseif spin_nmber == 35 then
-                color_visual_spin = "b"
-              elseif spin_nmber == 36 then
-                color_visual_spin = 4
-              end
-      function Spin_checker(varlist)
-          if varlist[0] == "OnTalkBubble" and varlist[3] ~= -1 and varlist[2]:find("spun the wheel and got") then
-            text = ""
-            if varlist[2]:find("CP:") then
-              start, final = string.find(varlist[2], "=")
-              text = "`0[ `4FAKE `0] " .. string.sub(varlist[2], final + 1)
-            else
-              var = {}
-              var[0] = "OnTalkBubble"
-              var[1] = varlist[1]
-              var[2] = "`7[``"..GetLocal().name.."`` spun the wheel and got `"..color_visual_spin..""..spin_nmber.."``!`7]``"
-              var[3] = -1
-              var.netid = -1
-              SendVarlist(var)
-              return true
-            end
-            SendVarlist({
-              [0] = "OnTalkBubble",
-              [1] = varlist[1],
-              [2] = text,
-              [3] = -1,
-              netid = -1,
-            })
-            return true
-        end
-      end
-      AddCallback("Spin_checker", "OnVarlist", Spin_checker)
-      return true
-      end
-      end
-      
-    AddCallback("spinx_changer","OnPacket", visual_spin_2)
-    
+
     function logingxd(type, packet)
         if packet:find("action|enter_game") then
             OnConsoleMessage("`0[ `3Yoshiro `0] `9Removing game freeze / crash..")
@@ -8494,70 +8259,4 @@ function shortcutsxd1(type, packet)
     end
     
     AddCallback("logingxd", "OnPacket", logingxd)
-    
-    function check_login(varlist)
-        if varlist[0] == "OnConsoleMessage" and varlist[1]:find("Welcome back,") then
-            wl_balance = math.floor(GetItemCount(242))
-            dl_balance = math.floor(GetItemCount(1796))
-            bgl_balance = math.floor(GetItemCount(7188))
-            OnConsoleMessage("`0[ `3Yoshiro `0] `9Player Authentication `2Successful.")
-            OnConsoleMessage("`0[ `3Yoshiro `0] `9WL : `3"..wl_balance.." `1& `9DL : `3"..dl_balance.." `1& `9BGL : `3"..bgl_balance)
-            return true
-        end
-    end
-    AddCallback("check_login","OnVarlist", check_login)
-    
-    function auto_acces_main(varlist)
-        if varlist[0] == "OnConsoleMessage" and  varlist[1]:find("wants to add you to a") then
-          function hide_acces1(varlist)
-            if varlist[0] == "OnDialogRequest" and  varlist[1]:find("end_dialog|acceptaccess|No|Yes|") then
-            return true
-            end
-        end
-        AddCallback("hide_acces1","OnVarlist", hide_acces1)
-          
-      function hide_acces2(varlist)
-          if varlist[0] == "OnDialogRequest" and varlist[1]:find("add_button|acceptlock|") then
-          return true
-          end
-      end
-      AddCallback("hide_acces2","OnVarlist", hide_acces2)
-          
-      netid = GetLocal().netid
-      pkt = "action|wrench\n|netid|"..netid
-      pkt2 = "action|dialog_return\ndialog_name|popup\nnetID|"..netid.."|\nbuttonClicked|acceptlock"
-      pkt3 = "action|dialog_return\ndialog_name|acceptaccess"
-      SendPacket(2,pkt)
-      SendPacket(2,pkt2)
-      SendPacket(2,pkt3)
-      return true
-      end
-      end
-    AddCallback("auto_acces_main","OnVarlist", auto_acces_main)
-    
-    function chnage_bgl(varlist)
-        if varlist[0] == "OnDialogRequest" and varlist[1]:find("Dial a number to call somebody in Growtopia") then
-            SendPacket(2, "action|dialog_return\ndialog_name|phonecall\ntilex|"..varlist[1]:match("embed_data|tilex|(%d+)").."|\ntiley|"..varlist[1]:match("embed_data|tiley|(%d+)").."|\nnum|-34|\nbuttonClicked|chc0")
-            return true
-        end
-    end
-    AddCallback("chnage_bgl", "OnVarlist", chnage_bgl)
-    
-    function chnage_bgl2(varlist)
-        if varlist[0] == "OnDialogRequest" and varlist[1]:find("end_dialog|phonecall|Hang Up||") then
-            return true
-        end
-    end
-    AddCallback("chnage_bgl2", "OnVarlist", chnage_bgl2)
-    
-    -- credit
-    
-    var = {}
-    var[0] = "OnTalkBubble"
-    var[1] = GetLocal().netid
-    var[2] = "`9Proxy was injected successfully."
-    var[3] = 0
-    var[4] = 0
-    var.netid = -1
-    SendVarlist(var)
     
