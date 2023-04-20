@@ -1,8 +1,4 @@
 
-
-
---wrench command
-
 function wp(type, packet)
     if packet == ("action|input\n|text|/wp") then
         mode_wm = "pull"
@@ -72,9 +68,6 @@ end
 AddCallback("woff","OnPacket", woff)
 
 
-
-
---world command
 
 function pullall(type, packet)
     if packet == ("action|input\n|text|/pullall") then
@@ -150,8 +143,6 @@ end
 
 
 
---spam command
-
 set_spam_text = "Set your spam text and delay !"
 set_spam_delay = 5
 spamming = false
@@ -226,9 +217,6 @@ function start_stop_spam(type, packet)
 AddCallback("start_stop_spam","OnPacket", start_stop_spam)
 
 
-
---safe command
-
 function casino_help_when_join(type, packet)
     if packet:find("action|input\n|text|/safe ") then
         casino_help_when_join = packet:gsub("action|input\n|text|/safe ", "")
@@ -253,7 +241,7 @@ function casino_help_when_join(type, packet)
                         end
                     end
                     collectItems()
-                    -- unacces leave
+
                     OnConsoleMessage("`0[ `3Yoshiro `0] `9unaccessing")
                     SendPacket(2, "action|input\n|text|/unaccess")
                     SendPacket(2, "action|dialog_return\ndialog_name|unaccess")
@@ -283,7 +271,6 @@ function casino_help_when_join(type, packet)
                         end
                     end
                     collectItems()
-                    -- unacces leave
                     OnConsoleMessage("`0[ `3Yoshiro `0] `9unaccessing")
                     SendPacket(2, "action|input\n|text|/unaccess")
                     SendPacket(2, "action|dialog_return\ndialog_name|unaccess")
@@ -296,8 +283,6 @@ function casino_help_when_join(type, packet)
                     
 end
 
-
---Host command
 
 
 function hide_dialogx(type, packet)
@@ -459,7 +444,7 @@ function cwl_delayed()
 end
 end
 
--- dl
+
 
 function dropdl(type, packet)
     if packet:find("action|input\n|text|/dl") then
@@ -509,7 +494,6 @@ function cdl_delayed()
 end
 end
 
--- bgl
 
 function dropbgl(type, packet)
     if packet:find("action|input\n|text|/bgl") then
@@ -658,7 +642,6 @@ end
 AddCallback("auto_compress","OnPacket", auto_compress)
 
 
---titles command
 
 function title6(type, packet)
     if packet == ("action|input\n|text|/title reset") then
@@ -734,8 +717,6 @@ function title4(type, packet)
 end
 
 
-
---visual commands
 
 
 function ances_chnage(type, packet)
