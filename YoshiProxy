@@ -1,10 +1,10 @@
 function proxy_commands()
-add_label_with_icon|big|`3Proxy Command List``|left|1790|
+add_textbox|big|`3Proxy Command List``|left|
 add_spacer|small|
 add_textbox|`9This Proxy Made By : `!YoshiGT|left|
 add_spacer|small|
 add_spacer|small|
-add_label_with_icon|small|`9Wanna Buy Proxy? Just Msg `!YoshiGT.|left|1438|
+add_textbox|small|`9Wanna Buy Proxy? Just Msg `!YoshiGT.|left|
 add_spacer|small|
 add_textbox|`9Facebook : `!Yoshi GT|left|
 add_textbox|`9TikTok : `!@YoshiGT|left|
@@ -21,7 +21,7 @@ add_smalltext|`9Command : `0/kickall `0( `3Kick all players in current world `0)
 add_smalltext|`9Command : `0/banall `0( `3Ban all players in current world `0)|left|
 add_smalltext|`9Command : `0/tradeall `0( `3Trade all players in current world `0)|left|
 add_spacer|small|
-add_label_with_icon|small|`3Wrench Commands``|left|32|
+add_textbox|small|`3Wrench Commands``|left|
 add_spacer|small|
 add_textbox|`9Command : `!/wm|left|
 add_spacer|small|
@@ -31,17 +31,17 @@ add_smalltext|`9Command : `0/wk `0( `3Turn on wrench kick `0)|left|
 add_smalltext|`9Command : `0/wb `0( `3turn on wrench ban `0)|left|
 add_smalltext|`9Command : `0/woff `0( `3Turn off wrench mode `0)|left|
 add_spacer|small|
-add_label_with_icon|small|`3Spam Commands``|left|6272|
+add_textbox|small|`3Spam Commands``|left|
 add_spacer|small|
 add_smalltext|`9Command : `0/spamtext or /spt [`9 text `0] `0( `3Set a spam text `0)|left|
 add_smalltext|`9Command : `0/spamdelay or /sd [`9 delay `0] `0( `3Set delay for spaming in seconds `0)|left|
 add_smalltext|`9Command : `0// `0( `3Enable / Disable spam `0)|left|
 add_spacer|small|
-add_label_with_icon|small|`3Safe Commands``|left|278|
+add_textbox|small|`3Safe Commands``|left|
 add_spacer|small|
 add_smalltext|`9Command : `0/safe `0( `3Collect & Unacces & Leave when moderator join world `0)|left|
 add_spacer|small|
-add_label_with_icon|small|`3Host Commands``|left|758|
+add_textbox|small|`3Host Commands``|left|
 add_spacer|small|
 add_smalltext|`9Command : `0/dialog `0( `3Show / Block drop dialog `0)|left|
 add_smalltext|`9Command : `0/daw `0( `3drop all wls`0)|left|
@@ -58,7 +58,7 @@ add_smalltext|`9Command : `0/wl [`9 amount `0]|left|
 add_smalltext|`9Command : `0/dl [`9 amount `0]|left|
 add_smalltext|`9Command : `0/bgl [`9 amount `0]|left| 
 add_spacer|small|
-add_label_with_icon|small|`3Titles Commands``|left|6276|
+add_textbox|small|`3Titles Commands``|left|
 add_spacer|small|
 add_smalltext|`9Command : `!/titles|left|
 add_spacer|small|
@@ -70,7 +70,7 @@ add_smalltext|`9Command : `0/maxlevel `0( `3Max level ( lvl 125 ) title `0)|left
 add_smalltext|`9Command : `0/oflegend or /legend `0( `3Legendary title `0)|left|
 add_smalltext|`9Command : `0/title reset `0( `3Reset titles to normal `0)|left|
 add_spacer|small|
-add_label_with_icon|small|`3Visual Clothes``|left|1784|
+add_textbox|small|`3Visual Clothes``|left|
 add_spacer|small|
 add_smalltext|`9Command : `0/saveclothe or /sc `0( `3/ Save set when joining / leaving world `0)|left|
 add_smalltext|`9Command : `0/vhat [`9 id `0] `0( `3Set visual hat `0)|left|
