@@ -1,5 +1,5 @@
 function shortcuts_proxy(type, packet)
-    if packet == ("action|input\n|text|/proxy") then
+    if packet = ("action|input\n|text|/proxy") then
 add_label_with_icon|big|`#AJProxy Android `9Commands|left|1796|
 add_spacer|small
 add_textbox|`cCommands:|2480|
