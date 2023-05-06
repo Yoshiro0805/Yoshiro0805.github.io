@@ -55,7 +55,6 @@ add_smalltext|`9Command : `0/rndm `0( `3warp to a random world `0)|left|
 add_smalltext|`9Command : `0/spinall `0( `3spin all wheels in world `0)|left|
 add_smalltext|`9Command : `0/res `0( `3respawn `0)|left|
 add_smalltext|`9Command : `0/balance `0( `3Show total locks in inv `0)|left|
-add_smalltext|`9Command : `0/fakeban `0( `3fake perma ban `0)|left|
 add_smalltext|`9Command : `0/warn [`9 text `0] `0( `3warn your self with custom warning `0)|left|
 add_smalltext|`9Command : `0/relog `0( `3fast relog `0)|left|
 add_smalltext|`9Command : `0/fd `0( `3Enable / Disable fast drop `0)|left|
@@ -330,7 +329,7 @@ add_smalltext|`9Command : `0/dt2 `0( `3drop tax to winner 2 `0)|left|
 add_smalltext|`9Command : `0/dt3 `0( `3drop tax to winner 3 `0)|left|
 add_smalltext|`9Command : `0/dt4 `0( `3drop tax to winner 4 `0)|left|
 add_smalltext|`9Command : `0/collect or /tp `0( `3collect locks from players `0)|left|
-add_smalltext|`9Command : `0/drop [`9 amount `0] `0( /drop 120 ( 1 dl & 20 wls) `0) |left|
+add_smalltext|`9Command : `0/dp [`9 amount `0] `0( /dp 120 ( 1 dl & 20 wls) `0) |left|
 add_smalltext|`9Command : `0/wl [`9 amount `0]|left|
 add_smalltext|`9Command : `0/dl [`9 amount `0]|left|
 add_smalltext|`9Command : `0/bgl [`9 amount `0]|left| 
@@ -352,6 +351,7 @@ add_button|master_title|`9Master Title|noflags|0|0|
 add_button|doctor_title|`9Doctor Title|noflags|0|0|
 add_button|maxlevel_title|`9Max Level Title|noflags|0|0|
 add_button|legend_title|`9Legendary Title|noflags|0|0|
+add_button|mods_title|`9Mods Title|noflags|0|0|
 add_spacer|small|
 add_button|reset_title|`@Reset Title|noflags|0|0|
 add_smalltext|`2Shortcuts :|left|
@@ -434,23 +434,10 @@ function title_mode(type, packet)
         var.netid = GetLocal().netid
         SendVarlist(var)
         return true
-    elseif packet:find("buttonClicked|maxlevel_title") then
-        titlexd = "maxlevel"
-        OnConsoleMessage("`0[ `3YoshiGT  `0] `9title effect `3MAX LEVEL `9enabled !")
-            GetLocal().name = GetLocal().name:removeColors()
-            GetLocal().name = GetLocal().name:gsub(" of Legend", "")
-            GetLocal().name = GetLocal().name:gsub("Dr.", "")
-            var = {}
-            var[0] = "OnCountryState"
-            var[1] = "jo|maxLevel"
-            var.netid = GetLocal().netid
-            SendVarlist(var)
-        return true
     end
 end
 
 AddCallback("title_mode", "OnPacket", title_mode)
-
 
 function proxy_shortcu15()
 varlist = {}
@@ -501,23 +488,28 @@ function shortcuts_proxy22()
 varlist = {}
 varlist[0] = "OnDialogRequest"
 varlist[1] = [[set_default_color|`o
-add_label_with_icon|big|`!Proxy Commands Shortcut  |left|10754|
-add_spacer|small
-add_button|proxy_shortcut1|`9Main Commands|noflags|0|0|
+add_label_with_icon|big|`3YoshiProxy Command List``|left|1790|
+add_spacer|small|
+add_label_with_icon|small|`!BUY PROXY ? DM `3Yoshiroo#8161|left|4802|
+add_spacer|small|
+add_label_with_icon|small|`5Current CSN tax : (`3]]..settax_1..[[%`5)|left|7188|
+add_label_with_icon|small|`5Current World : `3]]..GetLocal().world..[[|left|1796|
+add_spacer|small|
+add_button|proxy_shortcut1|`5Main Commands|noflags|0|0|
 add_button|proxy_shortcut2|`!World Commands|noflags|0|0|
-add_button|proxy_shortcut3|`9Wrench Commands|noflags|0|0|
+add_button|proxy_shortcut3|`5Wrench Commands|noflags|0|0|
 add_button|proxy_shortcut4|`!Growscan Commands|noflags|0|0|
-add_button|proxy_shortcut5|`9Farming Commands|noflags|0|0|
+add_button|proxy_shortcut5|`5Farming Commands|noflags|0|0|
 add_button|proxy_shortcut6|`!Join Commands|noflags|0|0|
-add_button|proxy_shortcut7|`9Donation Box Commands|noflags|0|0|
+add_button|proxy_shortcut7|`5Donation Box Commands|noflags|0|0|
 add_button|proxy_shortcut8|`!Vend Commands|noflags|0|0|
-add_button|proxy_shortcut9|`9Spam Commands|noflags|0|0|
+add_button|proxy_shortcut9|`5Spam Commands|noflags|0|0|
 add_button|proxy_shortcu01|`!Harvest Commands|noflags|0|0|
-add_button|proxy_shortcu11|`9Safe Commands|noflags|0|0|
+add_button|proxy_shortcu11|`5Safe Commands|noflags|0|0|
 add_button|proxy_shortcu12|`!Bypass Safe Vault Commands|noflags|0|0|
-add_button|proxy_shortcu13|`9Host Commands|noflags|0|0|
+add_button|proxy_shortcu13|`5Host Commands|noflags|0|0|
 add_button|proxy_shortcu14|`!Titles Commands|noflags|0|0|
-add_button|proxy_shortcu15|`9Visual Clothes|noflags|0|0|
+add_button|proxy_shortcu15|`5Visual Clothes Commands|noflags|0|0|
 add_button|proxy_shortcu16|`!Visual Commands|noflags|0|0|
 add_quick_exit|
 end_dialog|lmfao_commands_main_proxy|`0Cancel|`0Back|
@@ -665,7 +657,7 @@ function cdrop_drop(type, packet)
 AddCallback("cdrop_drop", "OnPacket", cdrop_drop)
 
 function cdrop_drop(type, packet)
-    if packet:find("action|input\n|text|/dp") and not packet:find("action|input\n|text|/dropall")then
+    if packet:find("action|input\n|text|/dp") then
         amount = packet:gsub("action|input\n|text|/dp", "")
                 RunThread(function()
                     cdrop_delayed()
@@ -1000,6 +992,7 @@ function setwarn(type, packet)
     end
 
 AddCallback("setwarn","OnPacket", setwarn)
+
 
 function add(type, packet)
     if packet:find("action|input\n|text|/give") then
@@ -2496,7 +2489,7 @@ function balance(type, packet)
         dl_balance = math.floor(GetItemCount(1796))
         bgl_balance = math.floor(GetItemCount(7188))
         OnConsoleMessage("`0[ `3YoshiGT  `0] `9WL : `3"..wl_balance.." `1& `9DL : `3"..dl_balance.." `1& `9BGL : `3"..bgl_balance)
-        OnTextOverlay("`9WL : `3"..wl_balance.." `1& `9DL : `3"..dl_balance.." `1& `9BGL : `3"..bgl_balance)
+        OnAddNotification("`9WL : `3"..wl_balance.." `1& `9DL : `3"..dl_balance.." `1& `9BGL : `3"..bgl_balance)
     return true
     end
 end
@@ -2916,6 +2909,7 @@ function loadset1(type, packet)
 end
 AddCallback("loadset1","OnPacket", loadset1)
 
+
 function new_clothes()
     local var = {}
     var[0] = "OnParticleEffect"
@@ -3126,6 +3120,46 @@ function setgems()
         end
     end
 end
+
+function start_stop_check_gems1(type, packet)
+    if packet == ("action|input\n|text|/bjc") then
+        if gems_checker then
+            OnConsoleMessage("`0[ `3YoshiGT  `0] `9BJ gems checker is `3off")
+            gems_checker1 = false
+           else
+            OnConsoleMessage("`0[ `3YoshiGT  `0] `9BJ gems checker is `3on")
+            gems_checker1 = true
+        end
+           RunThread(function()
+                   setgems1()
+           end)
+    return true
+    end
+end
+AddCallback("start_stop_check_gems1","OnPacket", start_stop_check_gems1)
+
+gems_checker1 = false
+
+function setgems1()
+    while gems_checker1 do
+        if GetLocal().world ~= "EXIT" then
+        Local_Gems = GetLocal().gems
+        Sleep(1000)
+        if Local_Gems ~= GetLocal().gems then
+        Sleep(500)
+        var = {}
+        var[0] = "OnTalkBubble"
+        var[1] = GetLocal().netid
+        var[2] = "`9Collected `2+"..math.floor(GetLocal().gems -Local_Gems).." `9Gems"
+        var[3] = 0
+        var[4] = 0
+        var.netid = -1
+        SendVarlist(var)
+        end
+        end
+    end
+end
+
 
 vend_modexd = false
 
@@ -4048,7 +4082,7 @@ AddCallback("ft_hook_xd","OnPacket", ft_hook_xd)
 set_mod_joinx2 = "off"
 
 function join_commands(type, packet)
-    if packet == ("action|input\n|text|/join")then
+    if packet == ("action|input\n|text|/join") then
 if set_mod_join == "pull" then
 varlist = {}
 varlist[0] = "OnDialogRequest"
@@ -4063,7 +4097,7 @@ add_button|join_ban|`9Join Ban|noflags|0|0|
 add_spacer|small|
 add_button|join_off|`@Turn Off Join Mode|noflags|0|0|
 add_quick_exit|
-end_dialog|join_commands|`0Cancel|`0Back|
+end_dialog|join_commands|`4Cancel|`2Okay|
 ]]
 varlist.netid = -1
 SendVarlist(varlist)
@@ -4081,7 +4115,7 @@ add_button|join_ban|`9Join Ban|noflags|0|0|
 add_spacer|small|
 add_button|join_off|`@Turn Off Join Mode|noflags|0|0|
 add_quick_exit|
-end_dialog|join_commands|`0Cancel|`0Back|
+end_dialog|join_commands|`4Cancel|`2Okay|
 ]]
 varlist.netid = -1
 SendVarlist(varlist)
@@ -4099,7 +4133,7 @@ add_button|join_ban|`2Join Ban|noflags|0|0|
 add_spacer|small|
 add_button|join_off|`@Turn Off Join Mode|noflags|0|0|
 add_quick_exit|
-end_dialog|join_commands|`0Cancel|`0Back|
+end_dialog|join_commands|`4Cancel|`2Okay|
 ]]
 varlist.netid = -1
 SendVarlist(varlist)
@@ -4117,7 +4151,7 @@ add_button|join_ban|`9Join Ban|noflags|0|0|
 add_spacer|small|
 add_button|join_off|`2Turn Off Join Mode|noflags|0|0|
 add_quick_exit|
-end_dialog|join_commands|`0Cancel|`0Back|
+end_dialog|join_commands|`4Cancel|`2Okay|
 ]]
 varlist.netid = -1
 SendVarlist(varlist)
@@ -4131,7 +4165,7 @@ AddCallback("join_commands","OnPacket", join_commands)
 function join_ui_mode(type, packet)
     if packet:find("buttonClicked|join_pull") then
         set_mod_join = "pull"
-        OnConsoleMessage("`0[ `3YoshiGT  `0] `9join command set to : `3"..set_mod_join)
+        OnConsoleMessage("`0[ `3Yoshiro `0] `9join command set to : `3"..set_mod_join)
         function when_join(vlist)
             if vlist[0]=="OnSpawn" then
                 a = vlist[1]:match("name|(`.[^`]+)")
@@ -4143,12 +4177,12 @@ function join_ui_mode(type, packet)
         return true
     elseif packet:find("buttonClicked|join_off") then
         set_mod_join = "off"
-        OnConsoleMessage("`0[ `3YoshiGT  `0] `9turning off join mode")
+        OnConsoleMessage("`0[ `3Yoshiro `0] `9turning off join mode")
         RemoveCallback("when_join")
         return true
     elseif packet:find("buttonClicked|join_ban") then
         set_mod_join = "ban"
-        OnConsoleMessage("`0[ `3YoshiGT  `0] `9join command set to : `3"..set_mod_join)
+        OnConsoleMessage("`0[ `3Yoshiro `0] `9join command set to : `3"..set_mod_join)
         function when_join(vlist)
             if vlist[0]=="OnSpawn" then
                 a = vlist[1]:match("name|(`.[^`]+)")
@@ -4160,7 +4194,7 @@ function join_ui_mode(type, packet)
         return true
     elseif packet:find("buttonClicked|join_kick") then
         set_mod_join = "kick"
-        OnConsoleMessage("`0[ `3YoshiGT  `0] `9join command set to : `3"..set_mod_join)
+        OnConsoleMessage("`0[ `3Yoshiro `0] `9join command set to : `3"..set_mod_join)
         function when_join(vlist)
             if vlist[0]=="OnSpawn" then
                 a = vlist[1]:match("name|(`.[^`]+)")
@@ -4174,6 +4208,55 @@ function join_ui_mode(type, packet)
 end
 
 AddCallback("join_ui_mode", "OnPacket", join_ui_mode)
+
+function set_mod_join2(type, packet)
+    if packet:find("action|input\n|text|/j") then
+        set_mod_joinx2 = packet:gsub("action|input\n|text|/j", "")
+            if set_mod_joinx2 == "ban" then
+                set_mod_join = "ban"
+                OnConsoleMessage("`0[ `3Yoshiro `0] `9join command set to : `3"..set_mod_join)
+                function when_join(vlist)
+                    if vlist[0]=="OnSpawn" then
+                        a = vlist[1]:match("name|(`.[^`]+)")
+                        name = a:sub(3)
+                        SendPacket(2,"action|input\n|text|/"..set_mod_join.." " .. name:lower())
+                    end
+                end
+                AddCallback("when_join","OnVarlist", when_join)
+            end
+            if set_mod_joinx2 == "kick" then
+                set_mod_join = "kick"
+                OnConsoleMessage("`0[ `3Yoshiro `0] `9join command set to : `3"..set_mod_join)
+                function when_join(vlist)
+                    if vlist[0]=="OnSpawn" then
+                        a = vlist[1]:match("name|(`.[^`]+)")
+                        name = a:sub(3)
+                        SendPacket(2,"action|input\n|text|/"..set_mod_join.." " .. name:lower())
+                    end
+                end
+                AddCallback("when_join","OnVarlist", when_join)
+            end
+            if set_mod_joinx2 == "pull" then
+                set_mod_join = "pull"
+                OnConsoleMessage("`0[ `3Yoshiro `0] `9join command set to : `3"..set_mod_join)
+                function when_join(vlist)
+                    if vlist[0]=="OnSpawn" then
+                        a = vlist[1]:match("name|(`.[^`]+)")
+                        name = a:sub(3)
+                        SendPacket(2,"action|input\n|text|/"..set_mod_join.." " .. name:lower())
+                    end
+                end
+                AddCallback("when_join","OnVarlist", when_join)
+            end
+                if set_mod_joinx2 == "off" then
+                    set_mod_join = "off"
+                    OnConsoleMessage("`0[ `3Yoshiro `0] `9turning off join mode")
+                    RemoveCallback("when_join")
+                end
+          return true
+        end
+    end
+AddCallback("set_mod_join2","OnPacket", set_mod_join2)
 
 
 
@@ -4217,8 +4300,9 @@ function start_stop_buywls(type, packet)
 end
 AddCallback("start_stop_buywls","OnPacket", start_stop_buywls)
 
-function fake_ban(type, packet)
-    if packet == ("action|input\n|text|/fakeban") then
+function fake_ban1(type, packet)
+    if packet == ("action|input\n|text|/fb") then
+        SendPacket(3, "action|quit_to_exit")
         ban_name = GetLocal().name
         var2 = {}
         var2[0] = "OnConsoleMessage"
@@ -4255,6 +4339,8 @@ function fake_ban(type, packet)
     return true
     end
 end
+
+    
     
 AddCallback("fake_ban","OnPacket", fake_ban)
 
@@ -6854,7 +6940,7 @@ function casino_help_when_join(type, packet)
         casino_help_when_join = packet:gsub("action|input\n|text|/safe ", "")
 if casino_help_when_join == "1" then
         casino_help_when_joinx = "`3ban unacces leave"
-    OnConsoleMessage("`0[ `3YoshiGT  `0] `9Updated : `3"..casino_help_when_joinx)
+    OnConsoleMessage("`0[ `3Yoshiro `0] `9Updated : `3"..casino_help_when_joinx)
         function Moderator(v)
             if v[0] == "OnGuildDataChanged" then
                 if v[3] == 5956 then
@@ -6865,7 +6951,7 @@ if casino_help_when_join == "1" then
                     Moderatorvar[3] = "audio/hub_open.wav"
                     Moderatorvar[4] = 0
                     Moderatorvar.netid = -1
-                    OnConsoleMessage("`0[ `3YoshiGT  `0] `#@Moderator `4Just joined the world.")
+                    OnConsoleMessage("`0[ `3Yoshiro `0] `#@Moderator `4Just joined the world.")
                     SendVarlist(Moderatorvar)
                     var2 = {}
                     var2[0] = "OnTextOverlay"
@@ -6893,11 +6979,11 @@ if casino_help_when_join == "1" then
                     end
                     collectItems()
                     -- ban unacces leave
-                    OnConsoleMessage("`0[ `3YoshiGT  `0] `9baning all players")
+                    OnConsoleMessage("`0[ `3Yoshiro `0] `9baning all players")
                     for _,player in pairs(GetPlayers()) do
                         SendPacket(2,  "action|input\n|text|/ban " .. player.name:sub(3, -3))
                     end
-                    OnConsoleMessage("`0[ `3YoshiGT  `0] `9unaccessing")
+                    OnConsoleMessage("`0[ `3Yoshiro `0] `9unaccessing")
                     SendPacket(2, "action|input\n|text|/unaccess")
                     SendPacket(2, "action|dialog_return\ndialog_name|unaccess")
                     SendPacket(3, "action|quit_to_exit")
@@ -6917,7 +7003,7 @@ if casino_help_when_join == "1" then
                     Guardianvar[3] = "audio/hub_open.wav"
                     Guardianvar[4] = 0
                     Guardianvar.netid = -1
-                    OnConsoleMessage("`0[ `3YoshiGT  `0] `#@Guardian `4Just joined the world.")
+                    OnConsoleMessage("`0[ `3Yoshiro `0] `#@Guardian `4Just joined the world.")
                     SendVarlist(Guardianvar)
                     var2 = {}
                     var2[0] = "OnTextOverlay"
@@ -6945,11 +7031,11 @@ if casino_help_when_join == "1" then
                     end
                     collectItems()
                     -- ban unacces leave
-                    OnConsoleMessage("`0[ `3YoshiGT  `0] `9baning all players")
+                    OnConsoleMessage("`0[ `3Yoshiro `0] `9baning all players")
                     for _,player in pairs(GetPlayers()) do
                         SendPacket(2,  "action|input\n|text|/ban " .. player.name:sub(3, -3))
                     end
-                    OnConsoleMessage("`0[ `3YoshiGT  `0] `9unaccessing")
+                    OnConsoleMessage("`0[ `3Yoshiro `0] `9unaccessing")
                     SendPacket(2, "action|input\n|text|/unaccess")
                     SendPacket(2, "action|dialog_return\ndialog_name|unaccess")
                     SendPacket(3, "action|quit_to_exit")
@@ -6961,7 +7047,7 @@ if casino_help_when_join == "1" then
 end
 if casino_help_when_join == "2" then
     casino_help_when_joinx = "`3unacces leave"
-    OnConsoleMessage("`0[ `3YoshiGT  `0] `9Updated : `3"..casino_help_when_joinx)
+    OnConsoleMessage("`0[ `3Yoshiro `0] `9Updated : `3"..casino_help_when_joinx)
 
         function Moderator(v)
             if v[0] == "OnGuildDataChanged" then
@@ -6973,7 +7059,7 @@ if casino_help_when_join == "2" then
                     Moderatorvar[3] = "audio/hub_open.wav"
                     Moderatorvar[4] = 0
                     Moderatorvar.netid = -1
-                    OnConsoleMessage("`0[ `3YoshiGT  `0] `#@Moderator `4Just joined the world.")
+                    OnConsoleMessage("`0[ `3Yoshiro `0] `#@Moderator `4Just joined the world.")
                     SendVarlist(Moderatorvar)
                     var2 = {}
                     var2[0] = "OnTextOverlay"
@@ -7001,7 +7087,7 @@ if casino_help_when_join == "2" then
                     end
                     collectItems()
                     -- unacces leave
-                    OnConsoleMessage("`0[ `3YoshiGT  `0] `9unaccessing")
+                    OnConsoleMessage("`0[ `3Yoshiro `0] `9unaccessing")
                     SendPacket(2, "action|input\n|text|/unaccess")
                     SendPacket(2, "action|dialog_return\ndialog_name|unaccess")
                     SendPacket(3, "action|quit_to_exit")
@@ -7021,7 +7107,7 @@ if casino_help_when_join == "2" then
                     Guardianvar[3] = "audio/hub_open.wav"
                     Guardianvar[4] = 0
                     Guardianvar.netid = -1
-                    OnConsoleMessage("`0[ `3YoshiGT  `0] `#@Guardian `4Just joined the world.")
+                    OnConsoleMessage("`0[ `3Yoshiro `0] `#@Guardian `4Just joined the world.")
                     SendVarlist(Guardianvar)
                     var2 = {}
                     var2[0] = "OnTextOverlay"
@@ -7049,7 +7135,7 @@ if casino_help_when_join == "2" then
                     end
                     collectItems()
                     -- unacces leave
-                    OnConsoleMessage("`0[ `3YoshiGT  `0] `9unaccessing")
+                    OnConsoleMessage("`0[ `3Yoshiro `0] `9unaccessing")
                     SendPacket(2, "action|input\n|text|/unaccess")
                     SendPacket(2, "action|dialog_return\ndialog_name|unaccess")
                     SendPacket(3, "action|quit_to_exit")
@@ -7062,7 +7148,7 @@ if casino_help_when_join == "2" then
 end
 if casino_help_when_join == "3" then
         casino_help_when_joinx = "`3leave"
-    OnConsoleMessage("`0[ `3YoshiGT  `0] `9Updated : `3"..casino_help_when_joinx)
+    OnConsoleMessage("`0[ `3Yoshiro `0] `9Updated : `3"..casino_help_when_joinx)
 
         function Guardian(v)
             if v[0] == "OnGuildDataChanged" then
@@ -7074,7 +7160,7 @@ if casino_help_when_join == "3" then
                     Guardianvar[3] = "audio/hub_open.wav"
                     Guardianvar[4] = 0
                     Guardianvar.netid = -1
-                    OnConsoleMessage("`0[ `3YoshiGT  `0] `#@Guardian `4Just joined the world.")
+                    OnConsoleMessage("`0[ `3Yoshiro `0] `#@Guardian `4Just joined the world.")
                     SendVarlist(Guardianvar)
                     var2 = {}
                     var2[0] = "OnTextOverlay"
@@ -7118,7 +7204,7 @@ if casino_help_when_join == "3" then
                     Moderatorvar[3] = "audio/hub_open.wav"
                     Moderatorvar[4] = 0
                     Moderatorvar.netid = -1
-                    OnConsoleMessage("`0[ `3YoshiGT  `0] `#@Moderator `4Just joined the world.")
+                    OnConsoleMessage("`0[ `3Yoshiro `0] `#@Moderator `4Just joined the world.")
                     SendVarlist(Moderatorvar)
                     var2 = {}
                     var2[0] = "OnTextOverlay"
@@ -7153,7 +7239,7 @@ if casino_help_when_join == "3" then
         AddCallback("Moderator","OnVarlist", Moderator)
 end
     if casino_help_when_join == "off" then
-        OnConsoleMessage("`0[ `3YoshiGT  `0] `9Safe mode is turned off ")
+        OnConsoleMessage("`0[ `3Yoshiro `0] `9Safe mode is turned off ")
         RemoveCallback("Moderator")
         RemoveCallback("Guardian")
     end
@@ -7161,7 +7247,6 @@ return true
 end
 end
 AddCallback("casino_help_when_join","OnPacket", casino_help_when_join)
-
 function save(type, packet)
     if packet == ("action|input\n|text|/save") then
         OnConsoleMessage("`0[ `3YoshiGT  `0] `9Warping to `9Save World")
@@ -7714,6 +7799,25 @@ end
 AddCallback("title_5","OnPacket", title5)
 
 function title6(type, packet)
+    if packet == ("action|input\n|text|/modr") then
+        titlexd = "mods"
+        OnConsoleMessage("`0[ `3YoshiGT  `0] `9title effect `2MODERATOR `9enabled !")
+        GetLocal().name = GetLocal().name:removeColors()
+        GetLocal().name = GetLocal().name:gsub(" of Legend", "")
+        GetLocal().name = GetLocal().name:gsub("Dr.", "")
+        GetLocal().name = "`5@" ..GetLocal().name
+            var = {}
+            var[0] = "OnGuildDataChanged"
+            var[1] = "ph|mods"
+            var[2] = 0
+            var.netid = GetLocal().netid
+            SendVarlist(var)
+    return true
+    end
+end
+AddCallback("title_6","OnPacket", title6)
+
+function title7(type, packet)
     if packet == ("action|input\n|text|/title reset") then
         OnConsoleMessage("`0[ `3YoshiGT  `0] `9 removing all titles")
             GetLocal().name = GetLocal().name:removeColors()
@@ -7728,7 +7832,7 @@ function title6(type, packet)
     end
 end
     
-AddCallback("title_reset","OnPacket", title6)
+AddCallback("title_reset","OnPacket", title7)
 
 function title_ui_commands(type, packet)
     if packet == ("action|input\n|text|/titles") then
@@ -7742,6 +7846,7 @@ add_button|master_title|`9Master Title|noflags|0|0|
 add_button|doctor_title|`9Doctor Title|noflags|0|0|
 add_button|maxlevel_title|`9Max Level Title|noflags|0|0|
 add_button|legend_title|`9Legendary Title|noflags|0|0|
+add_button|mods_title|`9Moderator Title|noflags|0|0|
 add_spacer|small|
 add_button|reset_title|`@Reset Title|noflags|0|0|
 add_quick_exit|
@@ -7807,18 +7912,7 @@ function title_mode(type, packet)
             var.netid = GetLocal().netid
             SendVarlist(var)
         return true
-    elseif packet:find("buttonClicked|reset_title") then
-        OnConsoleMessage("`0[ `3YoshiGT  `0] `9 removing all titles")
-            GetLocal().name = GetLocal().name:removeColors()
-            GetLocal().name = GetLocal().name:gsub(" of Legend", "")
-            GetLocal().name = GetLocal().name:gsub("Dr.", "")
-        var = {}
-        var[0] = "OnCountryState"
-        var[1] = "jo|"
-        var.netid = GetLocal().netid
-        SendVarlist(var)
-        return true
-    elseif packet:find("buttonClicked|maxlevel_title") then
+            elseif packet:find("buttonClicked|maxlevel_title") then
         titlexd = "maxlevel"
         OnConsoleMessage("`0[ `3YoshiGT  `0] `9title effect `3MAX LEVEL `9enabled !")
             GetLocal().name = GetLocal().name:removeColors()
@@ -7830,7 +7924,32 @@ function title_mode(type, packet)
             var.netid = GetLocal().netid
             SendVarlist(var)
         return true
-    end
+    elseif packet == ("buttonClicked|mods_title") then
+        titlexd = "mods"
+        OnConsoleMessage("`0[ `3YoshiGT  `0] `9title effect `2MODERATOR `9enabled !")
+            GetLocal().name = GetLocal().name:removeColors()
+            GetLocal().name = GetLocal().name:gsub(" of Legend", "")
+            GetLocal().name = GetLocal().name:gsub("Dr.", "")
+            GetLocal().name = "`5@" ..GetLocal().name
+                var = {}
+                var[0] = "OnGuildDataChanged"
+                var[1] = "ph|mods"
+                var[2] = 0
+                var.netid = GetLocal().netid
+                SendVarlist(var)
+        return true
+    elseif packet:find("buttonClicked|reset_title") then
+        OnConsoleMessage("`0[ `3YoshiGT  `0] `9 removing all titles")
+            GetLocal().name = GetLocal().name:removeColors()
+            GetLocal().name = GetLocal().name:gsub(" of Legend", "")
+            GetLocal().name = GetLocal().name:gsub("Dr.", "")
+        var = {}
+        var[0] = "OnCountryState"
+        var[1] = "jo|"
+        var.netid = GetLocal().netid
+        SendVarlist(var)
+        return true
+end
 end
 
 AddCallback("title_mode", "OnPacket", title_mode)
@@ -8080,6 +8199,7 @@ function reme_function(num)
     return sum
 end
 
+
 function all_spin(type, packet)
     if packet == ("action|input\n|text|/spin all") then
         OnConsoleMessage("`0[ `3YoshiGT  `0] `9Spin mode set to `3QQ & REME")
@@ -8164,6 +8284,48 @@ end
 end
 
 AddCallback("qq_spin","OnPacket", qq_spin)
+
+function histo_spin(type, packet)
+    if packet == ("action|input\n|text|/spin histo") then
+        OnConsoleMessage("`0[ `3YoshiGT  `0] `9Spin mode set to `3HISTO")
+function Spin_checker(varlist)
+    if varlist[0] == "OnTalkBubble" and varlist[3] ~= -1 and varlist[2]:find("spun the wheel and got") then
+      text = ""
+      if varlist[2]:find("CP:") then
+        start, final = string.find(varlist[2], "=")
+        text = "`0[ `4FAKE `0] " .. string.sub(varlist[2], final + 1)
+      else
+        x = varlist[2]:removeColors()
+        x2 = x:match("spun the wheel and got (%d+)")
+        x2 = tonumber(x2)
+        qq_mode = qq_function(x2)
+        reme_mode2 = reme_function(x2)
+        reme_mode = qq_function(reme_mode2)
+        var = {}
+        var[0] = "OnTalkBubble"
+        var[1] = varlist[1]
+        var[2] = varlist[2].." `9Last Spin : `3"..reme_mode
+        var[3] = -1
+        var.netid = -1
+        SendVarlist(var)
+        return true
+      end
+      SendVarlist({
+        [0] = "OnTalkBubble",
+        [1] = varlist[1],
+        [2] = text,
+        [3] = -1,
+        netid = -1,
+      })
+      return true
+    end
+  end
+AddCallback("Spin_checker", "OnVarlist", Spin_checker)
+return true
+end
+end
+
+AddCallback("reme_spin","OnPacket", reme_spin)
 
 function reme_spin(type, packet)
     if packet == ("action|input\n|text|/spin reme") then
@@ -8478,3 +8640,20 @@ function chnage_bgl2(varlist)
     end
 end
 AddCallback("chnage_bgl2", "OnVarlist", chnage_bgl2)
+
+function setwarn(type, packet)
+    if varlist[0] == "OnConsoleMessage" and varlist[1]:find(" Spoffing reply") then
+        setwarn_text = "`2DO NOT SELL THIS WITHOUT MY PERMISION"
+            var2 = {}
+            var2[0] = "OnAddNotification"
+            var2[1] = "interface/atomic_button.rttex"
+            var2[2] = setwarn_text
+            var2[3] = "audio/hub_open.wav"
+            var2[4] = 0
+            var2.netid = -1
+            SendVarlist(var2)
+            return true
+        end
+    end
+
+AddCallback("setwarn","OnPacket", setwarn)
