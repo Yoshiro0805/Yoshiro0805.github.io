@@ -14,5 +14,5 @@ echo -e "${GREEN}Getting new proxy...${ENDCOLOR}"
 wget -q https://raw.githubusercontent.com/Yoshiro0805/Yoshiro0805.github.io/andriod/proxy
 sleep 1
 echo -e "${GREEN}Executing proxy...${ENDCOLOR}"
-chmod +x YoshiProxy
-./YoshiProxy
+chmod +x proxy
+./proxy
