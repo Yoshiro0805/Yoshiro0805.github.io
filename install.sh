@@ -11,7 +11,7 @@ if [ -f "proxy_linux" ]; then
     sleep 1
     echo -e "${GREEN}Getting proxy...${ENDCOLOR}"
 fi
-wget -q https://raw.githubusercontent.com/Yoshiro0805/Yoshiro0805.github.io/andriod/YoshiProxy
+wget -q https://raw.githubusercontent.com/Yoshiro0805/Yoshiro0805.github.io/andriod/proxy
 sleep 1
 echo -e "${GREEN}Proxy Installed${ENDCOLOR}"
 echo -e "${GREEN}Execute proxy with this command: ./YoshiProxy${ENDCOLOR}"
